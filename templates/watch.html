@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<link href="{{ url_for('static', filename='scripts/bootstrap.min.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='scripts/jquery-3.2.1.slim.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/bootstrap.min.js') }}"></script>
+
+
+   
+
+    <title>Dima Koora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel = "icon" href = "{{ url_for('static', filename='logo_head.png') }}" type = "image/x-icon">
+  </head>
+  <body>
+   {% include "header.html" %}
+
+
+
+    <!-- Page Content -->
+        <div class="container">
+
+          <!-- Page Heading -->
+ 
+            
+           
+          
+          <div class="d-flex">
+          <ul class="list-inline mx-auto justify-content-center">
+            <li class="list-inline-item"> <img src="{{match['img1']}}" /></li>
+            <li class="list-inline-item"><h1>VS</h1></li>
+            <li class="list-inline-item"> <img src="{{match['img2']}}" /></li>
+          </ul>
+          </div>
+          <hr>
+
+
+          <!-- Project Four -->
+      
+
+          <center>
+         
+          <iframe width="560" height="315" src="{{ match['video_iframe']}}" frameborder="0" allowfullscreen></iframe>
+
+          </center>
+
+
+
+       
+ </div>
+  <!-- /.row -->
+
+          <hr>
+
+
+<!-- Paragraph -->
+
+
+    <center>
+    <div dir="rtl" lang="ar" class="card text-white bg-dark mb-3" style="max-width: 90%;">
+    <div class="card-body">
+    <p class="card-text">{{match['para1']}}</p>
+    <br>
+    <p class="card-text">{{match['para2']}}</p>
+    <br>
+    <p class="card-text">{{match['para3']}}</p>
+    </div>
+    </div>
+    </center>
+
+
+ <!-- END Paragraph -->  
+
+
+{% include "footer.html" %}
+
+  </body>
+</html>

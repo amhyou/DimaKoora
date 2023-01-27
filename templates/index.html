@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<link href="{{ url_for('static', filename='scripts/bootstrap.min.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='scripts/jquery-3.2.1.slim.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/bootstrap.min.js') }}"></script>
+
+    <title>Dima Koora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel = "icon" href = "{{ url_for('static', filename='logo_head.png') }}" type = "image/x-icon">
+  </head>
+  <body>
+    
+ {% include "header.html" %}
+
+
+    <!-- Page Content -->
+        <div class="container">
+
+          <!-- Page Heading -->
+          <h1 class="my-4">Today's Most
+            <small>Important Matches</small>
+          </h1>
+
+          <hr>
+
+          <!-- Project Four -->
+
+          <center>
+          <div class="box-wrap">
+           
+
+            {% for match in today %}
+
+      
+            <div class="box">
+              <div class="d-flex justify-content-around">
+                <div class="first-team">
+                <div class="team-logo">
+                <img src="{{ today[match]['img1'] }}" width="70" height="70">
+                </div>
+                <div class="team-name">{{ today[match]["t1"] }}</div>
+                </div>
+          
+                <div class="match-timing">
+                <div id="match-hour">{{ today[match]["startime"] }} GMT</div>
+                <div id="match-canal">{{ today[match]["canal"] }}</div>
+                <div id="match-speaker">{{ today[match]["speaker"] }}</div>
+                <div id="match-dawri">{{ today[match]["dawri"] }}</div>
+ 
+                <a href="{{ 'watch/'+time+'_'+match }}" class="gogo"><button type="button" class="btn btn-success">Watch Now</button></a>
+
+                </div>
+                <div class="left-team">
+                <div class="team-logo">
+                <img src="{{ today[match]['img2'] }}" width="70" height="70">
+                </div>
+                <div class="team-name">{{ today[match]["t2"] }}</div>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+
+       
+    
+          </div>
+        </center>
+
+  <!-- /.row -->
+
+{% include "footer.html" %}
+    
+
+  </body>
+</html>

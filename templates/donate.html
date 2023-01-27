@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<link href="{{ url_for('static', filename='scripts/bootstrap.min.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='scripts/jquery-3.2.1.slim.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/bootstrap.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='donate/donate.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='donate/donate.css') }}">
+
+    <title>Dima Koora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel = "icon" href = "{{ url_for('static', filename='logo_head.png') }}" type = "image/x-icon">
+  </head>
+  <body>
+   {% include "header.html" %}
+
+
+    <!-- Page Content -->
+        <div class="container">
+
+          <!-- Page Heading -->
+          <h1 class="my-4">The service is enhanced more and more 
+            <small>with your support</small>
+          </h1>
+
+          <hr>
+
+ <!-- Project Four -->
+<div class="container">
+    
+  <div>
+    <a class="donate-with-crypto"
+      href="https://commerce.coinbase.com/checkout/70333257-46ad-4366-b18e-e2c2e88ba457">
+      Donate with Crypto
+    </a>
+    <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+    </script>
+  </div>
+
+  <br />
+  or
+  <br />
+    <div class="notice notice-success">
+        <img src="{{ url_for('static', filename='donate/btc.png') }}" width="85" height="85"><strong>     Bitcoin  :  </strong>
+        <input id="copy1text" size="34" spellcheck="false" value="34R6H2rpJCXZdK7CTw1KNd89DjKNBdf6oq" readonly/>
+    <button id="copy1" type="button" onclick="myfunction('copy1')">Copy<span class="done" aria-hidden="true">Copied</span></button>
+    </div>
+    <div class="notice notice-info">
+        <img src="{{ url_for('static', filename='donate/eth.png') }}" width="85" height="85"><strong>     Euthereum  :   </strong>
+        <input id="copy2text" size="40" spellcheck="false" value="0xa9b36d1539e927cae7471b9f1389b008dfbe2ea3" readonly />
+    <button id="copy2" type="button" onclick="myfunction('copy2')">Copy<span class="done" aria-hidden="true">Copied</span></button>
+    </div>
+    <div class="notice notice-danger">
+        <img src="{{ url_for('static', filename='donate/ltc.png') }}" width="85" height="85"><strong>      Litecoin  :  </strong>
+        <input id="copy3text" size="34" spellcheck="false" value="MK2VowJf4Bsb1zw5aBynRMcNagnA9MEYTr" readonly />
+    <button id="copy3" type="button" onclick="myfunction('copy3')">Copy<span class="done" aria-hidden="true">Copied</span></button>
+    </div>
+   
+</div>
+
+  <!-- /.row -->
+
+   <hr>
+
+{% include "footer.html" %}
+  </body>
+</html>
